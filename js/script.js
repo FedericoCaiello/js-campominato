@@ -8,20 +8,32 @@
 
 
 var listaNumeriPc = [29,];
+var numeroUtente;
+var esito;
+var punteggio = 0;
+
 for (i=0; i<16; i++) {
   listaNumeriPc.push(getRandomNumer(1, 100));
 }
 console.log(listaNumeriPc);
 
-var ricerca = comparazione(listaNumeriPc, 100);
+for (i=0; i<84; i++) {
+  numeroUtente = parseInt(prompt('inserisci un numero da 1 a 100'));
+  esito = comparazione(listaNumeriPc, numeroUtente);
+  if (esito == true) {
+    i = 84;
+    alert('hai perso');
+  }else if (punteggio == 84) {
+    alert('che culo hai vinto');
+    i = 84;
+  }
+  else {
+    punteggio++;
+  }
 
-
-
-
-
-
-
-
+}
+alert('il tuo punteggio e\'' + punteggio);
+console.log(punteggio);
 
 
 function comparazione(lista, numero) {
