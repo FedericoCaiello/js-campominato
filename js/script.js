@@ -5,31 +5,38 @@
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
 
-var listaArray = [];
-var listaArrayTentativi = [];
-var trovaNumero = false;
-var tentativi = 84;
 
 
-while (listaArray.length < 16) {
-  var randomNumber = getRandomNumer(1, 100);
-  if (listaArray.includes(randomNumber) == false) {
-    listaArray.push(randomNumber);
-  }
+var listaNumeriPc = [];
+for (i=0; i<16; i++) {
+  listaNumeriPc.push(getRandomNumer(1, 100));
 }
-function checkBomb(listaArrayDaGuardare, numeroDaGuardare) {
-  for (var i = 0; i < listaArrayDaGuardare.lenght; i++){
-    if (numeroDaGuardare == listaArrayDaGuardare[i]) {
-      return true;
-    }
-  }
-  return false;
-}
+console.log(listaNumeriPc);
 
-for (var j = 1; j <=16; j++) {
-  var utenteNumeri = parseInt(prompt('inserisci un numero da 1 a 100'));
-  console.log(utenteNumeri);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function getRandomNumer(numMin, numMax) {
   return Math.floor(Math.random() * (numMax - numMin + 1)) + numMin;
 }
