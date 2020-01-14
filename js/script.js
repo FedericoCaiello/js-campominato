@@ -7,12 +7,13 @@
 
 
 
-var listaNumeriPc = [];
+var listaNumeriPc = [29,];
 for (i=0; i<16; i++) {
   listaNumeriPc.push(getRandomNumer(1, 100));
 }
 console.log(listaNumeriPc);
 
+var ricerca = comparazione(listaNumeriPc, 100);
 
 
 
@@ -23,19 +24,16 @@ console.log(listaNumeriPc);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function comparazione(lista, numero) {
+  for (i=0; i < lista.length; i++) {
+    if (numero == lista[i]) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+}
 
 function getRandomNumer(numMin, numMax) {
   return Math.floor(Math.random() * (numMax - numMin + 1)) + numMin;
