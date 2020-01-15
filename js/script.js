@@ -37,28 +37,7 @@ console.log('difficolta',difficult);
 console.log('volte',numberPrompt);
 console.log('base minima',numMinChek);
 console.log('base massima',numMaxChek);
-
 // In seguito deve chiedere all’utente di inserire per 84 volte un numero da 1 a 100, se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti continua chiedendo all’utente un altro numero.
-// for (var i=0; i<84; i++) {
-//   numeroUtente = parseInt(prompt('inserisci un numero da 1 a 100'));
-//   esito = comparazione(listaNumeriPc, numeroUtente);
-//   // La partita termina quando il giocatore inserisce un numero “vietato”, ovvero presente nella lista di numeri random, o raggiunge il numero massimo possibile di tentativi consentiti.
-//   if (esito == true) {
-//     i = 84;
-//     alert('hai perso');
-//   }
-//   else if (punteggio == 84) {
-//     message = 'hai vinto';
-//     i = 84;
-//   }
-//   // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-//   else {
-//     punteggio++;
-//   }
-// }
-// alert('il tuo punteggio e\'' + punteggio);
-// console.log(punteggio);
-
 var findBomb = false;
 while (numeroUtente.length < numberPrompt && findBomb == false) {
   var numeroUtenteGioco = false;
@@ -66,22 +45,22 @@ while (numeroUtente.length < numberPrompt && findBomb == false) {
     var numeroUtenteGioco = parseInt(prompt('inserisci un numero da 1 a 100'));
     console.log('numero inserito' + checkRangeNumber(numMinChek, numMaxChek, numeroUtenteGioco));
   } while(checkRangeNumber(numMinChek, numMaxChek, numeroUtenteGioco) == false)
+  // La partita termina quando il giocatore inserisce un numero “vietato”, ovvero presente nella lista di numeri random, o raggiunge il numero massimo possibile di tentativi consentiti.
   if(comparazione(numeroUtente, numeroUtenteGioco) == false) {
     numeroUtente.push(numeroUtenteGioco);
-    // se il numero dell'utente è presente nelle numberBomb hai perso
     if(comparazione(listaNumeriPc, numeroUtenteGioco) == true){
       message = 'hai perso';
       findBomb = true;
-    } else {
+    }
+     // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
+    else {
       punteggio++;
     }
   }
 }
 console.log(numeroUtente);
 console.log(message + ' ' + punteggio);
-
-
-
+                                      
 // FUNZIONE
 function comparazione(lista, numero) {
   var i = 0;
